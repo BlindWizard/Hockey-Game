@@ -1,0 +1,29 @@
+{
+  "name": "client",
+  "version": "0.0.1",
+  "description": "Hockey game client",
+  "private": true,
+  "scripts": {
+    "watch": "webpack --watch",
+    "build-prod": "webpack --mode=production"
+  },
+  "keywords": [],
+  "author": "BlindWizard",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "js-cookie": "^3.0.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-error-boundary": "^4.0.13",
+    "sass": "^1.77.8",
+    "sass-loader": "^14.2.1",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4",
+    "@babel/core": "^7.24.9",
+    "@babel/preset-env": "^7.24.8",
+    "@babel/preset-react": "^7.24.7",
+    "babel-loader": "^9.1.3"
+  }
+}

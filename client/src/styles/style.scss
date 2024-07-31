@@ -1,0 +1,140 @@
+body {
+    background: black;
+}
+
+.app {
+    &__menu-page {
+        position: absolute;
+        width: 100%;
+        max-height: 50vh;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+
+        .app__online {
+            margin-top: 10px;
+        }
+
+        .app__button {
+            margin-top: 40px;
+        }
+    }
+
+    &__game-page {
+        position: absolute;
+        width: 100%;
+        max-height: 100vh;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+
+        .app__button {
+            margin-top: 20px;
+        }
+    }
+
+    &__logo {
+        position: relative;
+        z-index: 1;
+        color: #fff;
+        text-align: center;
+        font-size: 48px;
+
+        &_with-latency::after {
+            content: attr(data-latency)' ms';
+            font-size: 10px;
+            position: absolute;
+        }
+    }
+
+    &__online {
+        position: relative;
+        z-index: 1;
+        color: #fff;
+        text-align: center;
+        font-size: 32px;
+
+        &-badge {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 10px;
+            background-color: rgb(0, 255, 0);
+            line-height: 10px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+    }
+
+    &__error {
+        position: absolute;
+        color: #fff;
+        background: #000;
+        border: 1px solid #fff;
+        padding: 20px;
+        max-width: 25vw;
+        top: 20vh;
+        text-align: center;
+        margin: auto;
+        left: 0;
+        right: 0;
+        z-index: 2;
+
+        &-message {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .app__button {
+            margin-top: 20px;
+        }
+    }
+
+    &__button {
+        position: relative;
+        z-index: 1;
+        border: 1px solid #fff;
+        color: #fff;
+        background: #000;
+        font-size: 20px;
+        padding: 10px;
+
+        &:hover:not(:disabled) {
+            color: #000;
+            background: #fff;
+            cursor: pointer;
+        }
+
+        &-notice {
+            display: block;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    }
+
+    &__game-page {
+        .app__game {
+            &:hover {
+                cursor: grab;
+            }
+        }
+    }
+
+    &__game {
+        position: absolute;
+        z-index: 0;
+        max-width: 80vw;
+        max-height: 80vh;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}

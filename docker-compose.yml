@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: hockey_nginx
+    volumes:
+      - ./public:/usr/share/nginx/html
+    ports:
+      - "3000:80"
+    environment:
+      - NGINX_HOST=localhost
+      - NGINX_PORT=80
+
+  node:
+    image: node:latest
+    container_name: hockey_client_build
+    volumes:
+      - ./:/home/node/hockey
+    working_dir: /home/node/hockey/client
+    command: ./build.sh
+
+  go:
+    image: golang:latest
+    container_name: hockey_server
+    volumes:
+      - ./:/home/go/hockey
+    ports:
+      - "3001:3001"
+    working_dir: /home/go/hockey/server
+    command: ./server.sh
