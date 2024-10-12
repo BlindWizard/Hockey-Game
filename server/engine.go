@@ -1,8 +1,8 @@
 package main
 
-const EPSILON float64 = 0.0000001
+const EPSILON = 0.0000001
 const COLLISION_DISTANCE = 0.1
-const DEFAULT_DRAG float64 = 0.01
+const DEFAULT_DRAG = 0.01
 const PLAYER_MESSAGE_THROTTLE = 20
 const PHYSICS_CYCLE = 20
 const NETWORK_CYCLE = 20

@@ -17,6 +17,8 @@ const Utils = {
     },
 
     clamp: (num, min, max) => Math.min(Math.max(num, min), max),
+
+    lerp: (start, end, amt) => (1 - amt) * start + amt * end,
 }
 
 export { Utils };
