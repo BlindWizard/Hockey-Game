@@ -1,3 +1,4 @@
 /public/dist
 /client/node_modules
 /server/__debug*
+/server/hockey

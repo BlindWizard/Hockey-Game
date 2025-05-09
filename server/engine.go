@@ -12,7 +12,7 @@ const GAME_HEIGHT int = 1200
 const GATES_WIDTH int = 300
 const GATES_HEIGHT int = 80
 const ENTITY_RADIUS int = 40
-
+const MAX_PUCK_MAGNITUDE = 2
 const MAX_GOALS uint = 10
 
 type Position struct {

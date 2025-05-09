@@ -124,7 +124,7 @@ func (room *Room) updateWorldState(deltaT time.Duration) {
 
 	if ok {
 		room.world.positionPuck = position
-		room.world.magnitudePuck = magnitude
+		room.world.magnitudePuck = validateMagnitute(magnitude)
 
 		return
 	}
@@ -140,7 +140,7 @@ func (room *Room) updateWorldState(deltaT time.Duration) {
 
 	if ok {
 		room.world.positionPuck = position
-		room.world.magnitudePuck = magnitude
+		room.world.magnitudePuck = validateMagnitute(magnitude)
 
 		return
 	}
@@ -285,4 +285,12 @@ func detectGoal(puckPosition Vector) (bool, int) {
 	}
 
 	return false, 0
+}
+
+func validateMagnitute(puckMag *Vector) *Vector {
+	if VectorLength(puckMag) <= MAX_PUCK_MAGNITUDE {
+		return puckMag
+	}
+
+	return ResizeVector(puckMag, MAX_PUCK_MAGNITUDE)
 }

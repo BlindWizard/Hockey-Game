@@ -70,6 +70,13 @@ func NormalizeVector(a *Vector) *Vector {
 	return NewVector(a.x/length, a.y/length)
 }
 
+func ResizeVector(a *Vector, length float64) *Vector {
+	oldLength := VectorLength(a)
+	coef := length / oldLength
+
+	return NewVector(a.x*coef, a.y*coef)
+}
+
 func DegreeToRad(r float64) float64 {
 	return r * math.Pi / 180
 }
